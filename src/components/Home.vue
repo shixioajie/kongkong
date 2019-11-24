@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Haeder>
+    <Haeder :bool="false">
       <p>首页</p>
     </Haeder>
   </div>

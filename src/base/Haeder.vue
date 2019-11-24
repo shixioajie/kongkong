@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <span class="icon-icon--fanhui  iconfont" @click="back"></span>
+    <span v-show="bool" class="icon-icon--fanhui  iconfont" @click="back"></span>
     <slot class="slot">默认的</slot>
   </div>
 </template>
@@ -10,6 +10,9 @@
         name: "Haeder",
       data(){
          return{}
+      },
+      props:{
+          bool:{type:Boolean,default:false}
       },
       methods:{
          back:function () {
@@ -21,7 +24,7 @@
 
 <style lang="less" scoped>
   .header{
-    background:#4DD7F9F9;
+    background:#FDCD42;
     width: 100%;
     height: 3rem;
     /*font-size: 1.2rem;*/

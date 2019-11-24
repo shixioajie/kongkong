@@ -1,0 +1,40 @@
+{
+    "hotlist": [
+        {  "bookImg":"//timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574570629748&di=a75c09bebafb6b46f2fd902272691f80&imgtype=0&src=http%3A%2F%2Fstatics.juxia.com%2Fuploadfile%2Fshouyou%2F2017%2F6%2F2017060716271878.jpg",
+            "bookName": "罗小黑战记",
+            "bookPrice": 38.5,
+            "bookInfo":"有只不止只会萌的猫八年了",
+            "bookId":1
+        },
+        {  "bookImg":"//manhua.qpic.cn/vertical/0/16_18_18_b54c3fbce195e59e72ec396e4f3ba81e_1526465929669.jpg/420",
+            "bookName": "非人哉",
+            "bookPrice": 38.2,
+            "bookInfo":"神话传奇非人哉",
+            "bookId":2
+        },
+        {  "bookImg":"//timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574571770308&di=c9b7c75aeab6a1e93d241bda4c63786e&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fc71fbfa2535580e12fd083c0ff2c8658bef96bcba4eb-Fm9JoS_fw658",
+            "bookName": "孤单星球",
+            "bookPrice": 28.2,
+            "bookInfo":"独木舟作品，孤单星球送给失眠的人",
+            "bookId":3
+        },
+        {  "bookImg":"//timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574572032016&di=5385bb635e6bba261b87884abcc98be9&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Fbangumi%2F6c34eb9cc232bcbc6648aaa99d715df5db80c11b.jpg_225x300.jpg",
+            "bookName": "刺客五六七",
+            "bookPrice": 28.2,
+            "bookInfo":"剪刀刺客平凡的传奇",
+            "bookId":4
+        },
+        {  "bookImg":"//timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574572219427&di=3ec33ebd2989baa000c4fe4c79dd3c9a&imgtype=0&src=http%3A%2F%2Fnews.yule.com.cn%2Fuploadfile%2F2017%2F0825%2F20170825110107138.jpg",
+            "bookName": "一人之下",
+            "bookPrice": 38.12,
+            "bookInfo":"宝姐语录：“我其实我真的是精的一笔”",
+            "bookId":5
+        },
+        {  "bookImg":"//timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574572677871&di=8e7c64a840c4512f6c8cf8bd580361bb&imgtype=0&src=http%3A%2F%2Fy0.ifengimg.com%2Fcmpp%2F2014%2F12%2F25%2F09%2F486da417-b754-4f3b-808d-0d2bf7d1a919.jpg",
+            "bookName": "十万个冷笑话",
+            "bookPrice": 30.2,
+            "bookInfo":"我都没好意思让它上架实在是不想找图片了",
+            "bookId":6
+        }
+    ]
+}

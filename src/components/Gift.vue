@@ -1,6 +1,6 @@
 <template>
   <div class="gift">
-    <Haeder>
+    <Haeder :bool="true">
       <p>今日福利</p>
     </Haeder>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="my">
-    <Haeder>
+    <Haeder :bool="true">
       <p>我的个人</p>
     </Haeder>
   </div>

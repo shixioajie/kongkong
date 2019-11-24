@@ -36,14 +36,15 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding-bottom: 0.3rem;
+
     div{
       flex: 1;
       /*background: saddlebrown;*/
       height: 3rem;
+      background: #FCF99B;
     }
     div:hover{
-      background: plum;
+      background: #FDCD42;
     }
     span{
       font-size: 1.2rem;
