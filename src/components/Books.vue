@@ -1,5 +1,6 @@
 <template>
     <div class="books">
+<!--      公共插槽绑定bool-->
       <Haeder :bool="true">
         <p>书库</p>
       </Haeder>

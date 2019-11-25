@@ -4,7 +4,7 @@
     <div>
       <img :src="imgs[$route.params.id]" alt="">
       <h2 >{{names[$route.params.id]}}</h2>
-      <h3>{{price[$route.params.id]}}</h3>
+      <h3>{{price[$route.params.id] | getq("￥")}}</h3>
       <span>{{info[$route.params.id]}}</span>
     </div>
     <ul>
@@ -14,7 +14,7 @@
     </ul>
     <div class="shop">
       <router-link to="/payment" tag="div"><i class="iconfont icon-gouwuche "></i>购物车</router-link>
-      <div @click="addShop($route.params.id)">加入购物车</div>
+      <div @click="addShop($route.params.id+1)">加入购物车</div>
     </div>
   </div>
 </template>
@@ -34,6 +34,11 @@
         price:[],
         info:[],
         shopId:[]
+      }
+    },
+    filters:{
+      getq:function (val,q) {
+        return q+val
       }
     },
     components:{
@@ -56,17 +61,24 @@
         })
       },
       addShop(id){
-        // var shopList=[];
-        // shopList.push(id);
-        // console.log(shopList)
-        console.log(id);
-        this.shopId[this.shopId.length]=id;
-        console.log(this.shopId);
-        var shopList=this.shopId;
-        console.log(shopList);
-        Cookies.set('my-shop',JSON.stringify(shopList));
-        var cookie=Cookies.get('my-shop');
-        console.log(cookie)
+        let shopBool=Cookies.get('myshop');
+
+        var obj={};
+
+        if(shopBool){
+          obj= JSON.parse(shopBool);
+
+          if(obj[id]){
+            obj[id]+=1;
+          }else {
+            obj[id]=1;
+          }
+        }else {
+          obj={[id]:1};
+        }
+        console.log(obj);
+        Cookies.set('myshop',JSON.stringify(obj));
+
       }
     }
   }
@@ -79,6 +91,7 @@
     }
     .shop{
       margin-top: 1rem;
+      margin-bottom: 5rem;
       div{
         display: inline-block;
         font-weight: bold;

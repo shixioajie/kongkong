@@ -8,8 +8,8 @@
                    :to="{name:'book',params:{id:index}}" tag="li">
         <img :src="items.bookImg" :alt="items.bookImg">
         <div class="xixi">
-          <p class="bookname">描述：{{items.bookName}}</p>
-          <span class="nowrop">{{items.bookInfo}}</span>
+          <p class="bookname">{{items.bookName}}</p>
+          <span class="nowrop">描述：{{items.bookInfo}}</span>
           <p class="price">{{items.bookPrice | setq}}</p>
         </div>
       </router-link>
