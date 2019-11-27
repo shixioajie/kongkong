@@ -14,7 +14,7 @@
     </ul>
     <div class="shop">
       <router-link to="/payment" tag="div"><i class="iconfont icon-gouwuche "></i>购物车</router-link>
-      <div @click="addShop($route.params.id+1)">加入购物车</div>
+      <div @click="addShop(Number($route.params.id)+1)">加入购物车</div>
     </div>
   </div>
 </template>
@@ -73,7 +73,8 @@
           }else {
             obj[id]=1;
           }
-        }else {
+        }
+        else {
           obj={[id]:1};
         }
         console.log(obj);

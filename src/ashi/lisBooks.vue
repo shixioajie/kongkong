@@ -1,6 +1,6 @@
 <template>
 <div class="lisBooks">
-    <ul>
+    <ul >
 <!--      <li v-for="(items,index) in lists" :key="index">-->
 <!--        <img :src="items.bookImg" :alt="items.bookImg">-->
 <!--      </li>-->

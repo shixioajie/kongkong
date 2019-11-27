@@ -7,6 +7,7 @@ import books from '../components/Books'
 import my from '../components/My'
 import book from '../ashi/lisBook'
 import payment from '../ashi/payment'
+import bought from '../ashi/bought'
 
 
 Vue.use(Router);
@@ -20,6 +21,7 @@ export default new Router({
     {path:'/books',name:'books',component:books},
     {path:'/my',name:'my',component:my},
     {path:'/book/:id',name:'book',component:book},
-    {path:'/payment',name:'payment',component:payment}
+    {path:'/payment',name:'payment',component:payment},
+    {path:'/bought',name:'bought1',component:bought},
   ]
 })
