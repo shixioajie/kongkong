@@ -10,7 +10,7 @@
     </router-link>
     <router-link to="/gift" tag="div">
       <p class="iconfont icon-tuijian" ></p>
-      <span>今日福利</span>
+      <span>福利</span>
     </router-link>
     <router-link to="/books" tag="div">
       <p class="iconfont icon-shujia" ></p>
@@ -42,6 +42,10 @@
       /*background: saddlebrown;*/
       height: 3rem;
       background: #FCF99B;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      border-radius: .2rem;
+      border: .3rem solid rgba(255,131,54,0.5);
     }
     div:hover{
       background: #FDCD42;

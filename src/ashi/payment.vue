@@ -19,8 +19,8 @@
       </ul>
     </div>
     <div v-show="!bool" class="num">总价:{{nums |getq("￥")}} 元</div>
-     <router-link v-show="bool" class="num" tag="div" to="/books">竟然空空如也,不如再去逛逛</router-link>
-     <div><span class="jiesuan" @click="pay">单击结单</span></div>
+    <router-link v-show="bool" class="num" tag="div" to="/books">竟然空空如也,不如再去逛逛</router-link>
+    <div><span v-show="!bool" class="jiesuan" @click="pay">单击结单</span></div>
   </div>
 </template>
 
@@ -51,65 +51,58 @@
     },
     created(){
       this.getH();
-      this.switch=true
+      this.switch=true;
+      if (Cookies.get('myshop')==="{}") {
+        this.bool=true
+      }
     },
     methods:{
       add(index){
         //判断价格 加给总价和各自商品的小计
         this.shoplist[index].const+=1;
         this.nums=0; //当某个商品增加时重新计算nums
-        this.shoplist1=[];//备份先重新算起
+
         for(let i=0;i<this.shoplist.length;i++){
           this.nums+=this.shoplist[i].bookPrice*this.shoplist[i].const;
-          this.shoplist1.push(this.shoplist)
         }
       },
       sub(index){
         this.shoplist[index].const-=1; //判断价格 减去总价和各自商品的小计
         this.nums=0;    //总价也重新计算
-        this.shoplist1=[]; //清空备份
         if (this.shoplist[index].const===0){ //当某个商品const数量为0时对应元素直接影藏起来
           this.shoplist[index].ised=false
         }
         for(let i=0;i<this.shoplist.length;i++){
           this.nums+=this.shoplist[i].bookPrice*this.shoplist[i].const; //当某商品减时nums从新计算
-          this.shoplist1.push(this.shoplist[i]) //当某商品减时 重新备份这个数据
         }
-        if (this.nums===0) {
-           this.switch=false;
-           this.bool=true;
-           this.cook=null;
-          Cookies.set('myshop',{})
-           // delete Cookies
+        if (this.nums===0){
+          this.switch=false;
+          this.bool=true;
+          this.cook=null;
+          Cookies.set('myshop',{});
         }
-        // this.switch=this.shoplist(function (val,index) {
-        //    return val.const > 0
-        // });
       },
       pay(){
-        if (JSON.stringify(this.shoplist1)==="[]"){
-         alert("判断了这个数据是空的数组");
-          this.shoplist1=this.shoplist
-        }
+        this.shoplist1=this.shoplist.filter(item=>{
+          return item.const!==0
+        });
         Cookies.set('myshop',{});//清空购物车
-        // console.log(this.shoplist1);
         Cookies.set('record',JSON.stringify(this.shoplist1));
-        alert("nihao");
-        this.switch=false
+        this.switch=false;
+        this.bool=true;
       },
       getH(){
         getHotList().then((res)=>{
-          // console.log(123);
-            var cook=Cookies.get('myshop');
-          // console.log(cook);
-          // var cook=JSON.parse(Cookies.get('myshop'));
+          var cook=Cookies.get('myshop');
           if (cook&&this.switch){
             this.cook=cook=JSON.parse(cook);
-            this.shoplist=res.hotlist.filter(item=>{
-              item.const = this.cook[item.bookId];//cook[1]=2,cook[2]=1,coo[4]=1
-              item.ised = true;
-              // console.log(item);
+            this.shoplist=res.hotlist.filter(item=>{  //注意这里是在循环里面
+              item.const = this.cook[item.bookId];
+              //item是json来的数据给它加了一个const属性是从对应的cook来的对应的方法就是item的id来校准cook里的属性
+              // 实际上在这一步就已经改了jsong里的数据了
+              item.ised = true; //
               return cook[item.bookId] //cook[1],cook[2],coo[4]
+              //这一步是判断条件 筛选return的 cook与item的id对应的 对应则为true
             });
             //循环累加得到的数据的价格
             for(let i=0;i<this.shoplist.length;i++){

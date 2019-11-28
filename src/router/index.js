@@ -9,6 +9,7 @@ import book from '../ashi/lisBook'
 import payment from '../ashi/payment'
 import bought from '../ashi/bought'
 
+import xiangqing from '../base/xiangqing'
 
 Vue.use(Router);
 
@@ -23,5 +24,7 @@ export default new Router({
     {path:'/book/:id',name:'book',component:book},
     {path:'/payment',name:'payment',component:payment},
     {path:'/bought',name:'bought1',component:bought},
+    {path:"/xiangqing",name:"xiangqing",component:xiangqing}
+
   ]
 })

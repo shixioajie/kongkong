@@ -1,9 +1,9 @@
 <template>
-    <div class="viedo">
-      <Haeder :bool="true">
-   <p>视频</p>
-      </Haeder>
-    </div>
+  <div>
+    <Haeder :bool="true">
+      <p>查看</p>
+    </Haeder>
+  </div>
 </template>
 
 <script>

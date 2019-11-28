@@ -1,7 +1,7 @@
 <template>
   <div class="lisbook">
     <Haeder :bool="true"><p>购买页面</p></Haeder>
-    <div>
+    <div class="div">
       <img :src="imgs[$route.params.id]" alt="">
       <h2 >{{names[$route.params.id]}}</h2>
       <h3>{{price[$route.params.id] | getq("￥")}}</h3>
@@ -87,8 +87,11 @@
 
 <style lang="less" scoped>
   .lisbook{
+    .div{
+      margin-top: 1rem;
+    }
     img{
-      width: 80%;
+      width: 50%;
     }
     .shop{
       margin-top: 1rem;
